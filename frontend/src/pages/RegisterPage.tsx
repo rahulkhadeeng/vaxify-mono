@@ -1,3 +1,5 @@
+import RegisterForm from "@/components/auth/RegisterForm";
+
 const RegisterPage = () => {
   return (
     <div>
@@ -10,6 +12,8 @@ const RegisterPage = () => {
           Create your account to get started
         </p>
       </div>
+
+      <RegisterForm />
     </div>
   );
 };
