@@ -37,7 +37,7 @@ const UserNav = () => {
           </Avatar>
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent side="bottom">
+        <DropdownMenuContent side="bottom" align="end">
           <DropdownMenuLabel className="pl-2 pr-4">
             <div className="flex flex-col gap-1">
               <p className="font-medium leading-none capitalize">{user.name}</p>
@@ -60,7 +60,7 @@ const UserNav = () => {
 
           <DropdownMenuSeparator />
 
-          <Link to="/dashboard" className="flex gap-2 items-center">
+          <Link to="/logout" className="flex gap-2 items-center">
             <DropdownMenuItem className="hover:bg-gray-100 transition-all w-full cursor-pointer">
               <LogOut className="text-xl" />
               Logout

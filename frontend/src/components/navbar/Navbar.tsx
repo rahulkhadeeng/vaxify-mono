@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import { SignInButton, SignUpButton } from "./AuthButtons";
 import UserNav from "./UserNav";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   return (
     <div className="sticky top-0 z-50 h-16 px-4 py-3 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
@@ -30,8 +31,7 @@ const Navbar = () => {
         <div className="flex gap-5 items-center">
           {isAuthenticated ? (
             // user dropdown menu for nav
-            <div className="">
-              {/*  */}
+            <div className="flex items-center gap-5">
               <UserNav />
             </div>
           ) : (
@@ -44,7 +44,7 @@ const Navbar = () => {
           )}
 
           {/* navbar for smaller screens */}
-          {/* <MobileNav /> */}
+          <MobileNav />
         </div>
       </div>
     </div>
