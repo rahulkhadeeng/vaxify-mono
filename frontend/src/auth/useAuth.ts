@@ -8,7 +8,21 @@ export const useAuth = () => {
   const navigate = useNavigate();
   const { user, setAuthUser } = useAuthContext();
 
-  // login action
+  // register user
+  const registerUser = async (data) => {
+    await api.post("/auth/register/user", data);
+
+    navigate("/login");
+  };
+
+  // register staff
+  const registerStaff = async (data) => {
+    await api.post("/auth/register/staff", data);
+
+    navigate("/login");
+  };
+
+  // login
   const login = async (email: string, password: string) => {
     const response = await api.post<LoginResponse>("/auth/api", {
       email,
@@ -41,7 +55,7 @@ export const useAuth = () => {
     }
   };
 
-  // logout action
+  // logout
   const logout = () => {
     // remove jwt token
     localStorage.removeItem("token");
@@ -52,7 +66,7 @@ export const useAuth = () => {
     // redirect
     navigate(
       "/",
-      { replace: true }, // replace history to prevent back btn to protected pages
+      { replace: true }, // replace history to prevent back btn to access protected pages
     );
   };
 
@@ -61,5 +75,7 @@ export const useAuth = () => {
     isAuthenticated: !!user,
     login,
     logout,
+    registerUser,
+    registerStaff,
   };
 };
