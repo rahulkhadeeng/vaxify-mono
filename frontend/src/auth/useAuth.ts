@@ -8,21 +8,18 @@ export const useAuth = () => {
   const navigate = useNavigate();
   const { user, setAuthUser } = useAuthContext();
 
-  // register user
   const registerUser = async (registerUserData) => {
     await api.post("/auth/register/user", registerUserData);
 
     navigate("/login");
   };
 
-  // register staff
   const registerStaff = async (registerStaffData) => {
     await api.post("/auth/register/staff", registerStaffData);
 
     navigate("/login");
   };
 
-  // login
   const login = async (email: string, password: string) => {
     const response = await api.post<LoginResponse>("/auth/api", {
       email,
@@ -55,7 +52,6 @@ export const useAuth = () => {
     }
   };
 
-  // logout
   const logout = () => {
     // remove jwt token
     localStorage.removeItem("token");
