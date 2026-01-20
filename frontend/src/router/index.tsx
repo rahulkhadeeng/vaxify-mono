@@ -8,7 +8,7 @@ import RegisterUser from "@/pages/auth/RegisterUser";
 import RegisterStaff from "@/pages/auth/RegisterStaff";
 import { ProtectedRoute } from "./ProtectedRoute";
 import UserDashboard from "@/pages/user/UserDashboard";
-import DashboardLayout from "@/components/dashboards/layout/DashboardLayout";
+import DashboardLayout from "@/components/dashboards/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
