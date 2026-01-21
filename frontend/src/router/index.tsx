@@ -12,11 +12,18 @@ import DashboardLayout from "@/components/dashboards/DashboardLayout";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import StaffDashboard from "@/pages/staff/StaffDashboard";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
+import HomePage from "@/pages/HomePage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+    ],
   },
 
   // for auth

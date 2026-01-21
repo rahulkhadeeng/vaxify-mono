@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function UserDashboard() {
   return (
@@ -31,7 +32,11 @@ export default function UserDashboard() {
           </p>
         </div>
 
-        <Button className="w-full sm:w-auto">Book Appointment</Button>
+        {/* <Link to="/appointments/book"> */}
+        <Button className="w-full sm:w-auto cursor-pointer active:scale-95 transition-all">
+          Book Appointment
+        </Button>
+        {/* </Link> */}
       </div>
 
       {/* Top Cards */}
@@ -158,19 +163,35 @@ export default function UserDashboard() {
             <CardDescription>What would you like to do next?</CardDescription>
           </CardHeader>
 
-          <CardContent className="space-y-3">
-            <Button variant="outline" className="w-full">
-              Book Appointment
-            </Button>
-            <Button variant="outline" className="w-full">
-              View Appointments
-            </Button>
-            <Button variant="outline" className="w-full">
-              Find Centers
-            </Button>
+          <CardContent className="">
+            {QuickActionItems.map((item, idx) => (
+              <Link to={item.link} key={idx}>
+                <Button
+                  variant="outline"
+                  className="w-full cursor-pointer active:scale-95 transition-all mb-3"
+                >
+                  {item.name}
+                </Button>
+              </Link>
+            ))}
           </CardContent>
         </Card>
       </div>
     </div>
   );
 }
+
+const QuickActionItems = [
+  {
+    name: "Book Appointments",
+    link: "/appointments/book",
+  },
+  {
+    name: "View Appointments",
+    link: "/my-appointments",
+  },
+  {
+    name: "Find Centers",
+    link: "/centers",
+  },
+];

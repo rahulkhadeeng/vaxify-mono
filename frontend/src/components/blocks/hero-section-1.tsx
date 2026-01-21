@@ -70,9 +70,11 @@ export function HeroSectionComponent() {
                   <h1 className="mt-8 max-w-5xl mx-auto text-balance text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-7xl transition-all">
                     Simplifying Vaccination Management for Everyone{" "}
                   </h1>
+
                   <p className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                    Highly customizable components for building modern websites
-                    and applications that look and feel the way you mean it.
+                    A modern vaccination platform designed to make booking,
+                    tracking, and managing vaccinations feel clear, effortless,
+                    and dependable
                   </p>
                 </AnimatedGroup>
 
@@ -88,31 +90,29 @@ export function HeroSectionComponent() {
                     },
                     ...transitionVariants,
                   }}
-                  className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
+                  className="mt-12 flex flex-col items-center justify-center gap-3 md:flex-row"
                 >
-                  <div
-                    key={1}
-                    className="bg-foreground/10 rounded-[14px] border p-0.5"
-                  >
+                  <div key={1} className="">
                     <Button
                       asChild
                       size="lg"
-                      className="rounded-xl px-5 text-base"
+                      className="rounded-lg px-5 text-base cursor-pointer active:scale-95 transition-all"
                     >
                       <Link to="#link">
-                        <span className="text-nowrap">Start Building</span>
+                        <span className="text-nowrap">Find Centers</span>
                       </Link>
                     </Button>
                   </div>
+
                   <Button
                     key={2}
                     asChild
                     size="lg"
-                    variant="ghost"
-                    className="h-10.5 rounded-xl px-5"
+                    variant="outline"
+                    className="rounded-lg px-5 cursor-pointer active:scale-95 transition-all"
                   >
-                    <Link to="#link">
-                      <span className="text-nowrap">Request a demo</span>
+                    <Link to="">
+                      <span className="text-nowrap">Get Started</span>
                     </Link>
                   </Button>
                 </AnimatedGroup>

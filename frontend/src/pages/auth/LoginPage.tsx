@@ -14,6 +14,19 @@ const LoginPage = () => {
       </div>
 
       <LoginForm />
+
+      <div className="mt-6 p-4 bg-muted/50 rounded-lg text-xs text-center max-w-md mx-auto space-y-1">
+        <div>Demo Logins (any password):</div>
+        <div>
+          User → <code>user@test.com</code>
+        </div>
+        <div>
+          Staff → <code>staff@test.com</code>
+        </div>
+        <div>
+          Admin → <code>admin@test.com</code>
+        </div>
+      </div>
     </div>
   );
 };
