@@ -16,7 +16,7 @@ const DashboardLayout = () => {
       <SidebarInset>
         <div className="flex flex-1 flex-col">
           {/* nav */}
-          <header className="h-14 border-b px-6 flex items-center justify-between">
+          <header className="sticky z-50 top-0 h-14 border-b px-6 flex items-center justify-between bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
             <div className="font-medium flex gap-5 items-center">
               <SidebarTrigger className="cursor-pointer" />
 

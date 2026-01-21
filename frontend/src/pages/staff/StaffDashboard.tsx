@@ -1,11 +1,10 @@
-"use client";
-
 import StaffStatsGrid from "@/components/dashboards/staff/StaffDashboardStatsGrid";
 import StaffAppointmentsSection from "@/components/dashboards/staff/StaffDashboardAppointmentsSection";
+import StaffDashboardChartsSection from "@/components/dashboards/staff/StaffDashboardChartsSection";
 
 export default function StaffDashboard() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 overflow-hidden">
       {/* page header */}
       <div>
         <h1 className="text-2xl font-semibold mb-2">
@@ -22,6 +21,9 @@ export default function StaffDashboard() {
 
       {/*  */}
       <StaffAppointmentsSection />
+
+      {/* Charts */}
+      <StaffDashboardChartsSection />
     </div>
   );
 }
