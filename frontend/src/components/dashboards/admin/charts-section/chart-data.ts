@@ -166,3 +166,9 @@ export const platformData = [
     users: 158,
   },
 ];
+
+export const pieData = [
+  { name: "Completed", value: 512 },
+  { name: "Scheduled", value: 118 },
+  { name: "Cancelled", value: 54 },
+];

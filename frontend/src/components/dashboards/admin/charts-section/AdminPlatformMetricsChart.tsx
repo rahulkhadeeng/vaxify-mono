@@ -46,7 +46,7 @@ export default function AdminPlatformMetricsChart() {
       </CardHeader>
 
       {/* Chart */}
-      <CardContent className="px-2.5 py-6">
+      <CardContent className="px-2.5 py-6 relative">
         <ChartContainer
           config={chartConfig}
           className="w-full overflow-visible [&_.recharts-curve.recharts-tooltip-cursor]:stroke-initial"
