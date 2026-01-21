@@ -26,22 +26,35 @@ const transitionVariants = {
 export function HeroSectionComponent() {
   return (
     <>
-      <main className="overflow-hidden">
-        <div
+      <main className="relative overflow-hidden bg-white">
+
+        {/* <div
           aria-hidden
           className="z-2 absolute inset-0 pointer-events-none isolate opacity-50 contain-strict hidden lg:block"
         >
           <div className="w-140 h-320 -translate-y-87.5 absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
           <div className="h-320 absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
           <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-56 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
+        </div> */}
+
+        {/* Indigo glow background */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+        >
+            {/* Center glow behind heading */}
+          <div className="absolute top-[20%] left-1/2 -translate-x-1/2 h-[650px] w-[1200px] rounded-full bg-indigo-600/35 blur-[140px]" />
+
+          {/* Bottom support glow */}
+          <div className="absolute bottom-[-35%] right-[-25%] h-[700px] w-[700px] rounded-full bg-indigo-700/30 blur-[160px]" />
         </div>
 
+
+
         <section>
-          <div className="relative pt-24 md:pt-28">
-            <div
-              aria-hidden
-              className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"
-            />
+          <div className="relative z-10 pt-24 md:pt-28">
+
+
 
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
@@ -96,7 +109,7 @@ export function HeroSectionComponent() {
                     <Button
                       asChild
                       size="lg"
-                      className="rounded-lg px-5 text-base cursor-pointer active:scale-95 transition-all"
+                       className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30"
                     >
                       <Link to="#link">
                         <span className="text-nowrap">Find Centers</span>
