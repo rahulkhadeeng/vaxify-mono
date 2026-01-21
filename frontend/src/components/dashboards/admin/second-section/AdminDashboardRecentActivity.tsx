@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export default function AdminDashboardRecentActivity() {
   return (
-    <Card className="col-span-12 md:col-span-4">
+    <Card className="col-span-12 lg:col-span-4">
       <CardHeader>
         <CardTitle>Recent Activity</CardTitle>
       </CardHeader>

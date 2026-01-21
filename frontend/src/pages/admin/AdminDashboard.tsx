@@ -1,4 +1,5 @@
-import AdminDashboardChartsSection from "@/components/dashboards/admin/AdminDashboardChartsSection";
+import AdminDashboardChartsSection from "@/components/dashboards/admin/charts-section/AdminDashboardChartsSection";
+import AdminDashboardSecondSection from "@/components/dashboards/admin/second-section/AdminDashboardSecondSection";
 import AdminDashboardStatsGrid from "@/components/dashboards/admin/AdminDashboardStatsGrid";
 
 const AdminDashboard = () => {
@@ -14,6 +15,9 @@ const AdminDashboard = () => {
 
       {/*  */}
       <AdminDashboardStatsGrid />
+
+      {/*  */}
+      <AdminDashboardSecondSection />
 
       {/*  */}
       <AdminDashboardChartsSection />

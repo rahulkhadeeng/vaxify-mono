@@ -1,7 +1,7 @@
 import AdminDashboardPendingHospitals from "./AdminDashboardPendingHospitals";
 import AdminDashboardRecentActivity from "./AdminDashboardRecentActivity";
 
-const AdminDashboardChartsSection = () => {
+const AdminDashboardSecondSection = () => {
   return (
     <div className="grid grid-cols-12 gap-5 mt-5">
       <AdminDashboardPendingHospitals />
@@ -11,4 +11,4 @@ const AdminDashboardChartsSection = () => {
   );
 };
 
-export default AdminDashboardChartsSection;
+export default AdminDashboardSecondSection;
