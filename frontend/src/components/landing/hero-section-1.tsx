@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { Link } from "react-router-dom";
 
@@ -94,7 +93,7 @@ export function HeroSectionComponent() {
                 >
                   <Link
                     key={1}
-                    to="/products"
+                    to="/centers"
                     className="group relative px-6 py-1.5 flex transform items-center justify-center gap-2 overflow-visible whitespace-nowrap rounded-md text-white bg-indigo-600/80 font-medium transition-all 
           duration-300 hover:ring-2 hover:ring-offset-1 hover:ring-indigo-500 active:scale-90"
                   >
