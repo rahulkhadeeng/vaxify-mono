@@ -123,7 +123,7 @@ const LoginForm: React.FC = () => {
           {/* submit button */}
           <Button
             type="submit"
-            className="w-full cursor-pointer"
+            className="w-full cursor-pointer transition-all"
             size="lg"
             disabled={isLoading}
           >
@@ -154,20 +154,20 @@ const LoginForm: React.FC = () => {
         {/* social logins */}
         <div className="grid grid-cols-2 gap-5">
           <Button
-            className="cursor-pointer"
+            className="cursor-pointer active:scale-95 transition-all"
             variant="outline"
             disabled={isLoading}
           >
-            <FaGoogle />
+            <FaGoogle className="mr-2" />
             Google
           </Button>
 
           <Button
-            className="cursor-pointer"
+            className="cursor-pointer active:scale-95 transition-all"
             variant="outline"
             disabled={isLoading}
           >
-            <FaGithub />
+            <FaGithub className="mr-2" />
             Github
           </Button>
         </div>
