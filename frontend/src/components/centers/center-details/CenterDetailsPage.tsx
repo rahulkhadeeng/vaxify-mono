@@ -4,7 +4,7 @@ import { mockCenterData, type CenterData } from "./types";
 import CenterDetailsHeaderSection from "./CenterDetailsHeaderSection";
 import CenterDetailsVaccinesSection from "./CenterDetailsVaccinesSection";
 import CenterDetailsInfoSection from "./CenterDetailsInfoSection";
-import CenterDetailsCTASection from "./CenterDetailsCTASection";
+import CenterDetailsOperatingInfoSection from "./CenterDetailsOperatingInfoSection";
 
 const CenterDetailsPage = () => {
   const center: CenterData = mockCenterData;
@@ -31,7 +31,7 @@ const CenterDetailsPage = () => {
             <CenterDetailsInfoSection center={center} />
           </div>
 
-          <CenterDetailsCTASection center={center} />
+          <CenterDetailsOperatingInfoSection center={center} />
         </div>
       </div>
     </div>

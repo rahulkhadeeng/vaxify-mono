@@ -92,29 +92,16 @@ export function HeroSectionComponent() {
                   }}
                   className="mt-12 flex flex-col items-center justify-center gap-3 md:flex-row"
                 >
-                  <div key={1} className="">
-                    <Button
-                      asChild
-                      size="lg"
-                      className="rounded-lg px-5 text-base cursor-pointer active:scale-95 transition-all"
-                    >
-                      <Link to="#link">
-                        <span className="text-nowrap">Find Centers</span>
-                      </Link>
-                    </Button>
-                  </div>
-
-                  <Button
-                    key={2}
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="rounded-lg px-5 cursor-pointer active:scale-95 transition-all"
+                  <Link
+                    key={1}
+                    to="/products"
+                    className="group relative px-6 py-1.5 flex transform items-center justify-center gap-2 overflow-visible whitespace-nowrap rounded-md text-white bg-indigo-600/80 font-medium transition-all 
+          duration-300 hover:ring-2 hover:ring-offset-1 hover:ring-indigo-500 active:scale-90"
                   >
-                    <Link to="">
-                      <span className="text-nowrap">Get Started</span>
-                    </Link>
-                  </Button>
+                    <span className="group relative z-10 flex items-center gap-2 md:text- transition-all">
+                      Discover centers
+                    </span>
+                  </Link>
                 </AnimatedGroup>
               </div>
             </div>

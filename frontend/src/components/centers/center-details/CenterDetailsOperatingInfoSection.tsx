@@ -7,7 +7,7 @@ interface Props {
   center: CenterData;
 }
 
-const CenterDetailsCTASection = ({ center }: Props) => {
+const CenterDetailsOperatingInfoSection = ({ center }: Props) => {
   return (
     <div className="space-y-8">
       <Card>
@@ -48,4 +48,4 @@ const CenterDetailsCTASection = ({ center }: Props) => {
   );
 };
 
-export default CenterDetailsCTASection;
+export default CenterDetailsOperatingInfoSection;
