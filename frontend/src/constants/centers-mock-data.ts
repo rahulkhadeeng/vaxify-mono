@@ -7,7 +7,7 @@ export type Center = {
 
 export const centersData: Center[] = [
   {
-    id: "center-1",
+    id: "1",
     name: "City Health Vaccination Center",
     address: "MG Road, Pune",
     availableVaccines: ["Covishield", "Covaxin"],
