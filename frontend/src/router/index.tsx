@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "@/App";
 import AuthLayout from "@/components/auth/AuthLayout";
-
 import LoginPage from "@/pages/auth/LoginPage";
 import RegisterPage from "@/pages/auth/RegisterPage";
 import RegisterUser from "@/pages/auth/RegisterUser";
@@ -15,6 +14,7 @@ import AdminDashboard from "@/pages/admin/AdminDashboard";
 import HomePage from "@/pages/HomePage";
 import CentersPage from "@/pages/CentersPage";
 import CenterDetailsPage from "@/components/centers/center-details/CenterDetailsPage";
+import AppointmentBookingPage from "@/pages/appointment/book/AppointmentBookingPage";
 
 export const router = createBrowserRouter([
   {
@@ -69,6 +69,15 @@ export const router = createBrowserRouter([
           {
             path: "/dashboard",
             element: <UserDashboard />,
+          },
+        ],
+      },
+      {
+        element: <App />,
+        children: [
+          {
+            path: "/appointments/book/:centerId",
+            element: <AppointmentBookingPage />,
           },
         ],
       },

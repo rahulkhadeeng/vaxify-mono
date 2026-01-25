@@ -29,10 +29,10 @@ const NavLinks = () => {
 };
 
 const links = [
-  {
-    name: "Book Appointment",
-    href: "/book",
-  },
+  // {
+  //   name: "Book Appointment",
+  //   href: "/centers",
+  // },
   {
     name: "Centers",
     href: "/centers",
