@@ -1,4 +1,5 @@
 import type { ComponentProps, ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 
 interface FooterLink {
@@ -14,16 +15,29 @@ interface FooterSection {
 export function Footer() {
   return (
     <footer className="relative mt-20 bg-background">
-      <div className="mx-auto max-w-5xl px-6 py-14 border-t">
+      <div className="relative mx-auto max-w-5xl px-6 py-14 rounded-t-4xl border-t bg-[radial-gradient(35%_128px_at_50%_0%,theme(colors.foreground/8%),transparent)]">
+        
+        {/* glowing top border line */}
+        <div className="absolute top-0 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/20 blur" />
+
         <div className="grid gap-12 md:grid-cols-[1.2fr_2fr]">
           {/* brand */}
           <AnimatedContainer className="space-y-4">
-            <div className="text-lg font-semibold tracking-tight">Vaxify</div>
+            <div>
+              <Link
+                to="/"
+                className="flex items-center gap-2 text-2xl font-bold text-indigo-600"
+              >
+                <img src="/logo.svg" alt="" width={30} />
+              </Link>
+            </div>
+
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Secure and reliable vaccination management platform designed to
               streamline appointment booking, hospital operations, and
               administrative oversight.
             </p>
+
             <p className="text-muted-foreground text-xs">
               © {new Date().getFullYear()} Vaxify. All rights reserved.
             </p>

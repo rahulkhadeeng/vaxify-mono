@@ -4,6 +4,7 @@ import { Features1 } from "@/components/landing/FeaturesSectionGrid";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { FAQSection } from "@/components/landing/FaqSection";
 import { Footer } from "@/components/landing/FooterSection";
+import { CTASection } from "@/components/landing/CtaSection";
 
 const HomePage = () => {
   return (
@@ -17,8 +18,11 @@ const HomePage = () => {
       <Features />
 
       <FAQSection />
+      
+      <CTASection />
 
       <Footer />
+
     </div>
   );
 };
