@@ -24,7 +24,12 @@ type AnimatedGroupProps = {
     item?: Variants;
   };
   preset?: PresetType;
+  /** NEW (optional) */
+  inView?: boolean;
 };
+
+
+
 
 const defaultContainerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -142,6 +147,7 @@ function AnimatedGroup({
   className,
   variants,
   preset,
+  inView,
 }: AnimatedGroupProps) {
   const selectedVariants = preset
     ? presetVariants[preset]
@@ -149,20 +155,22 @@ function AnimatedGroup({
   const containerVariants = variants?.container || selectedVariants.container;
   const itemVariants = variants?.item || selectedVariants.item;
 
-  return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className={cn(className)}
-    >
-      {React.Children.map(children, (child, index) => (
-        <motion.div key={index} variants={itemVariants}>
-          {child}
-        </motion.div>
-      ))}
-    </motion.div>
-  );
+return (
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-100px" }}
+    variants={containerVariants}
+    className={cn(className)}
+  >
+    {React.Children.map(children, (child, index) => (
+      <motion.div key={index} variants={itemVariants}>
+        {child}
+      </motion.div>
+    ))}
+  </motion.div>
+);
+
 }
 
 export { AnimatedGroup };

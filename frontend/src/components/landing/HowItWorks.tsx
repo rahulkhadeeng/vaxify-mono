@@ -42,13 +42,13 @@ export function HowItWorks() {
 
               {/* Reduced padding to p-5 and decreased the rounded corners slightly */}
               <div className="relative flex flex-col bg-[#F3F4F6]/50 border border-transparent rounded-[1.5rem] p-5 h-full w-full max-w-[280px]">
-                <h4 className="text-center text-sm font-bold text-[#0F172A] mb-3">
+                <h4 className="text-center text-md font-bold text-[#0F172A] mb-3">
                   {step.title}
                 </h4>
 
                 {/* Reduced margin-bottom and slightly scaled the graphic box */}
                 <div className="relative aspect-square w-full bg-[#E5E7EB]/30 rounded-xl flex items-center justify-center mb-3 border border-white/20 overflow-hidden">
-                  <div className="scale-90">
+                  <div className="scale-155">
                     {step.graphic}
                   </div>
                   <div
@@ -60,7 +60,7 @@ export function HowItWorks() {
                   />
                 </div>
 
-                <p className="text-center text-slate-500 text-[11px] leading-relaxed px-2">
+                <p className="text-center text-slate-500 text-[13px] leading-relaxed px-2">
                   {step.description}
                 </p>
               </div>

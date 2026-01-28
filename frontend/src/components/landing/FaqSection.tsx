@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { AnimatedGroup } from "@/components/ui/animated-group";
 
 export function FAQSection() {
   const faqItems = [
@@ -47,29 +48,49 @@ export function FAQSection() {
 
   return (
     <section className="py-32">
-      {/* CENTERED WRAPPER */}
       <div className="mx-auto max-w-2xl px-6 space-y-16">
 
-        {/* CENTERED HEADING */}
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            Frequently Asked Questions
-          </h2>
-        </div>
+        {/* HEADING — APPEARS FIRST (Hero rhythm) */}
+        <AnimatedGroup preset="blur-slide">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-semibold md:text-4xl">
+              Frequently Asked Questions
+            </h2>
+          </div>
+        </AnimatedGroup>
 
-        {/* ACCORDION (LEFT-ALIGNED TEXT) */}
-        <Accordion type="single" collapsible className="text-left">
-          {faqItems.map((item) => (
-            <AccordionItem key={item.id} value={item.id}>
-              <AccordionTrigger className="font-medium">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {/* ACCORDION — APPEARS AFTER */}
+        <AnimatedGroup
+          variants={{
+            container: {
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  delayChildren: 0.15,
+                  staggerChildren: 0.08,
+                },
+              },
+            },
+            item: {
+              hidden: { opacity: 0, y: 14 },
+              visible: { opacity: 1, y: 0 },
+            },
+          }}
+        >
+          <Accordion type="single" collapsible className="text-left">
+            {faqItems.map((item) => (
+              <AccordionItem key={item.id} value={item.id}>
+                <AccordionTrigger className="font-medium">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </AnimatedGroup>
 
       </div>
     </section>

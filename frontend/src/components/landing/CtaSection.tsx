@@ -29,7 +29,7 @@ export function CTASection() {
               transition={{ duration: 0.5 }}
               className="text-3xl font-semibold tracking-tight text-slate-900 md:text-[34px]"
             >
-              Ready to Run Smarter Operations?
+              Ready to Manage Vaccinations More Efficiently?
             </motion.h2>
 
             <motion.p
@@ -38,7 +38,7 @@ export function CTASection() {
               transition={{ delay: 0.05 }}
               className="mt-2 text-base text-slate-500"
             >
-              Start your free trial today.
+              Book appointments, manage hospitals, and track vaccinations from one secure platform.
             </motion.p>
 
             <motion.div
@@ -48,7 +48,7 @@ export function CTASection() {
               className="mt-6"
             >
               <button className="rounded-lg bg-[#6A4BFF] px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#583ce0]">
-                Try Vaxify for Free
+                Get Started with Vaxify
               </button>
             </motion.div>
           </div>

@@ -1,11 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  Database,
-  BarChart3,
-  ShieldCheck,
-} from "lucide-react";
+import {Database,BarChart3,ShieldCheck,} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /* -------------------------------------------------------------------------- */
@@ -14,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 export function Features() {
   return (
-    <section className="py-12 md:py-16">
+    <section className="pt-3 pb-12 md:pt-3 md:pb-16">
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed sm:grid-cols-2 md:grid-cols-3">
           {FEATURES.map((feature) => (
