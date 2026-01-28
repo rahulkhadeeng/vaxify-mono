@@ -15,7 +15,7 @@ interface FooterSection {
 export function Footer() {
   return (
     <footer className="relative mt-20 bg-background">
-      <div className="relative mx-auto max-w-5xl px-6 py-14 rounded-t-4xl border-t bg-[radial-gradient(35%_128px_at_50%_0%,theme(colors.foreground/8%),transparent)]">
+      <div className="relative mx-auto max-w-5xl px-6 py-14 rounded-t-4xl border-t ,transparent)]">
         
         {/* glowing top border line */}
         <div className="absolute top-0 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/20 blur" />
@@ -27,16 +27,12 @@ export function Footer() {
               <Link
                 to="/"
                 className="flex items-center gap-2 text-2xl font-bold text-indigo-600"
-              >
+              > 
                 <img src="/logo.svg" alt="" width={30} />
+                Vaxify
               </Link>
             </div>
 
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-              Secure and reliable vaccination management platform designed to
-              streamline appointment booking, hospital operations, and
-              administrative oversight.
-            </p>
 
             <p className="text-muted-foreground text-xs">
               © {new Date().getFullYear()} Vaxify. All rights reserved.

@@ -1,91 +1,75 @@
 import { motion } from "framer-motion"
-import { Plus, Calendar } from "lucide-react"
+import { FlickeringGrid } from "@/components/ui/flickering-grid"
 
 export function CTASection() {
   return (
-    <section className="py-24">
-      {/* CTA CARD */}
-      <div className="relative mx-auto max-w-[1120px] overflow-hidden rounded-2xl bg-[#6A4BFF] px-12 py-20 text-white shadow-xl">
+    <section className="py-12 bg-white">
+      <div className="mx-auto max-w-[1100px] px-6">
+        <div className="relative overflow-hidden rounded-[40px] border border-slate-100 bg-[#F9FAFB] px-6 pt-10 shadow-sm">
 
-        {/* Animated Background Elements */}
-        <motion.div
-          className="absolute -top-20 -left-20 h-96 w-96 rounded-full border border-white/20"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        />
+          {/* FLICKERING GRID BACKGROUND */}
+          <FlickeringGrid
+            className="absolute inset-0 z-0"
+            squareSize={2}
+            gridGap={5}
+            color="#858e9a"
+            maxOpacity={0.30}
+            flickerChance={0.04}
+          />
 
-        <motion.div
-          className="absolute bottom-[-120px] right-[-120px] h-[500px] w-[500px] rounded-full border border-white/10"
-          animate={{ rotate: -360 }}
-          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-        />
 
-        {/* Floating Icons */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-white/20"
-            style={{
-              top: `${20 + i * 10}%`,
-              left: `${10 + i * 12}%`,
-            }}
-            animate={{ y: [0, -20, 0] }}
-            transition={{
-              duration: 6 + i,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            {i % 2 === 0 ? <Plus size={28} /> : <Calendar size={26} />}
-          </motion.div>
-        ))}
+          {/* TOP INDIGO GRADIENT */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-70 bg-gradient-to-b from-indigo-600/15 via-indigo-600/5 to-transparent" />
 
-        {/* Content */}
-        <div className="relative z-10 mx-auto max-w-3xl text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl font-bold md:text-3xl"
-          >
-            A Smarter Way to Run Vaccination Operations
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mx-auto mt-6 text-lg text-white/90"
-          >
-            Vaxify brings citizens, hospitals, and administrators onto a single
-            streamlined system — enabling easy appointment booking, controlled
-            hospital management, and transparent oversight from one secure
-            platform.
-          </motion.p>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-12"
-          >
-            <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              className="rounded-lg bg-white px-10 py-4 text-lg font-semibold text-indigo-600 shadow-2xl"
+          {/* CONTENT */}
+          <div className="relative z-20 mx-auto max-w-2xl text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-semibold tracking-tight text-slate-900 md:text-[34px]"
             >
-              Get Started with Vaxify
-            </motion.button>
+              Ready to Run Smarter Operations?
+            </motion.h2>
 
             <motion.p
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="mt-4 text-sm"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05 }}
+              className="mt-2 text-base text-slate-500"
             >
-              Built for citizens. Trusted by hospitals. Governed by admins.
+              Start your free trial today.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1 }}
+              className="mt-6"
+            >
+              <button className="rounded-lg bg-[#6A4BFF] px-6 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-[#583ce0]">
+                Try Vaxify for Free
+              </button>
+            </motion.div>
+          </div>
+
+          {/* DASHBOARD PREVIEW */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="relative z-20 mt-8 flex justify-center"
+          >
+            <div className="relative w-full max-w-4xl max-h-[320px] overflow-hidden rounded-t-xl border-x border-t border-slate-200 bg-white p-1 shadow-xl ring-1 ring-slate-950/5">
+              <img
+                src="/hero-dash.png"
+                alt="app screen"
+                className="w-full h-auto rounded-t-lg"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/30 to-transparent" />
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>

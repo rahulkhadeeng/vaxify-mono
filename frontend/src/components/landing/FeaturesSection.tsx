@@ -1,18 +1,21 @@
+"use client";
+
+import React from "react";
 import {
   Database,
-  BellRing,
-  ShieldCheck,
-  Users,
   BarChart3,
-  FileCheck2,
+  ShieldCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import React from "react";
+
+/* -------------------------------------------------------------------------- */
+/* MAIN SECTION                                                               */
+/* -------------------------------------------------------------------------- */
 
 export function Features() {
   return (
-    <section className="py-24 md:py-5">
-      <div className="mx-auto max-w-6xl px-6 space-y-16">
+    <section className="py-12 md:py-16">
+      <div className="mx-auto max-w-5xl px-6">
         <div className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed sm:grid-cols-2 md:grid-cols-3">
           {FEATURES.map((feature) => (
             <FeatureCard key={feature.title} feature={feature} />
@@ -23,28 +26,30 @@ export function Features() {
   );
 }
 
+/* -------------------------------------------------------------------------- */
+/* FEATURE CARD                                                               */
+/* -------------------------------------------------------------------------- */
+
 function FeatureCard({ feature }: { feature: (typeof FEATURES)[number] }) {
   const Icon = feature.icon;
 
   return (
     <div
       className={cn(
-        "relative overflow-hidden p-6",
+        "relative overflow-hidden p-6 md:p-8",
         "border border-dashed",
         "bg-background",
       )}
     >
-      {/* subtle inner blur / glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-linear-to-b from-muted/40 to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/40 to-transparent opacity-60" />
       </div>
 
-      {/* grid pattern with targeted fading */}
       <GridPattern />
 
       <Icon className="relative z-10 h-5 w-5 text-foreground/70" />
 
-      <h3 className="relative z-10 mt-8 text-sm font-medium">
+      <h3 className="relative z-10 mt-6 text-sm font-medium">
         {feature.title}
       </h3>
 
@@ -55,6 +60,10 @@ function FeatureCard({ feature }: { feature: (typeof FEATURES)[number] }) {
   );
 }
 
+/* -------------------------------------------------------------------------- */
+/* GRID PATTERN                                                               */
+/* -------------------------------------------------------------------------- */
+
 function GridPattern() {
   const id = React.useId();
 
@@ -63,10 +72,7 @@ function GridPattern() {
       aria-hidden
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full",
-        // UPDATED MASK:
-        // 0% to 30% is 'transparent' (Blank/White background for text/logo)
-        // 30% to 100% fades in to 'white' (Making the grid visible on the right)
-        "mask-[linear-gradient(to_right,transparent_0%,transparent_30%,white_100%)]",
+        "[mask-image:linear-gradient(to_right,transparent_0%,transparent_30%,white_100%)]",
       )}
     >
       <defs>
@@ -82,7 +88,6 @@ function GridPattern() {
 
       <rect width="100%" height="100%" fill={`url(#${id})`} />
 
-      {/* random darker blocks */}
       <g fill="rgba(0,0,0,0.08)">
         <rect x="72" y="48" width="24" height="24" />
         <rect x="168" y="96" width="24" height="24" />
@@ -92,41 +97,27 @@ function GridPattern() {
   );
 }
 
+/* -------------------------------------------------------------------------- */
+/* FEATURES DATA (FINAL – 3 CARDS ONLY)                                       */
+/* -------------------------------------------------------------------------- */
+
 const FEATURES = [
   {
-    title: "Smart Records",
+    title: "Secure Digital Records",
     icon: Database,
     description:
-      "Store and access complete vaccination histories securely in one centralized digital system.",
+      "Store and manage complete vaccination histories in a centralized system with strong security and privacy safeguards.",
   },
   {
-    title: "Auto Reminders",
-    icon: BellRing,
-    description:
-      "Get timely alerts for upcoming doses and boosters to ensure schedule adherence.",
-  },
-  {
-    title: "Data Security",
-    icon: ShieldCheck,
-    description:
-      "Protect vaccination data with verified, tamper-resistant, and privacy-focused safeguards.",
-  },
-  {
-    title: "Role Access",
-    icon: Users,
-    description:
-      "Enable controlled access for patients, healthcare providers, and authorized institutions.",
-  },
-  {
-    title: "Insight Analytics",
+    title: "Smart Monitoring & Insights",
     icon: BarChart3,
     description:
-      "Monitor vaccination coverage, trends, and performance through intuitive dashboards.",
+      "Track appointments, vaccination progress, and coverage trends while ensuring timely reminders for upcoming doses.",
   },
   {
-    title: "Compliance Ready",
-    icon: FileCheck2,
+    title: "Controlled Access & Compliance",
+    icon: ShieldCheck,
     description:
-      "Support regulatory standards and official verification with structured, audit-ready records.",
+      "Enable clear role-based access for users, hospitals, and administrators with audit-ready and compliant records.",
   },
 ];
