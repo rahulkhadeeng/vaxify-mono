@@ -147,7 +147,6 @@ function AnimatedGroup({
   className,
   variants,
   preset,
-  inView,
 }: AnimatedGroupProps) {
   const selectedVariants = preset
     ? presetVariants[preset]

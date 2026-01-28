@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, CalendarDays, ShieldCheck, Check } from "lucide-react";
+import { ShieldCheck, Check } from "lucide-react";
 
 export function HowItWorks() {
   return (
