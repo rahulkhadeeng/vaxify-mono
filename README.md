@@ -1,5 +1,5 @@
 # 💉 Vaxify – Vaccination Management System (VMS)
-
+![Preview](./public/HomePage.png)
 Vaxify is a **Vaccination Management System (VMS)** designed to manage vaccination appointments through a secure, role-driven platform. The system emphasizes reliability, clear separation of responsibilities, and a maintainable architecture suitable for real-world deployment.
 
 This repository defines the **authoritative scope and behavior** of the platform. Any functionality not explicitly described here is intentionally excluded.
